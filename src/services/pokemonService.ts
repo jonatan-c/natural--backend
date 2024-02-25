@@ -22,7 +22,7 @@ export const getPokemonsByName = async (name: string) => {
         (ability: any) => ability.ability.name,
       ),
     };
-    return pokemonData;
+    return [pokemonData];
   } catch (error) {
     console.error("Error fetching Pokemon data:", error);
     throw new Error("Pokemon not found");

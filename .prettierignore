@@ -24,3 +24,5 @@ README.md
 .eslintrc.json
 .eslintrc.js
 .prettierrc.json
+
+commitlint.config.js
