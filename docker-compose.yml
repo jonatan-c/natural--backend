@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   frontend-natural:
-    build: 
+    build:
       context: https://github.com/jonatan-c/natural--frontend.git
     ports:
       - "3000:3000"
