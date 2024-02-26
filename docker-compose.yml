@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  frontend-natural:
+    build: 
+      context: https://github.com/jonatan-c/natural--frontend.git
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend-natural
+
+  backend-natural:
+    build: https://github.com/jonatan-c/natural--backend.git
+    ports:
+      - "4000:4000"

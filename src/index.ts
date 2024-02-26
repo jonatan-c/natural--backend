@@ -12,7 +12,11 @@ const port = PORT;
 app.use(express.json());
 app.use(morgan("dev"));
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  }),
+);
 
 const options = {
   definition: {
