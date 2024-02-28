@@ -9,12 +9,18 @@ import {
 export const getPokemonsController = async (req: Request, res: Response) => {
   try {
     let pokemonData;
+
+    const page = req.query.page ? parseInt(req.query.page as string) : 1;
+    const limit = req.query.limit ? parseInt(req.query.limit as string) : 10;
+
+    const offset = (Number(page) - 1) * Number(limit);
+
     if (req.query.name) {
       pokemonData = await getPokemonsByName(req.query.name as string);
     } else if (req.query.type) {
       pokemonData = await getPokemonsByType(req.query.type as string);
     } else {
-      pokemonData = await getPokemons();
+      pokemonData = await getPokemons(offset, limit, page);
     }
     res.status(200).json({
       message: "Pokemon data successfully fetched",

@@ -34,7 +34,7 @@ describe("typesController", () => {
   });
 
   it("should handle error when fetching types", async () => {
-    const errorMessage = "Error fetching types list";
+    const errorMessage = "Internal Server Error";
     (typesService.getTypesNames as jest.Mock).mockRejectedValue(
       new Error(errorMessage),
     );

@@ -24,6 +24,16 @@ const router = Router();
  *         schema:
  *           type: string
  *         description: Filter Pokemon by type.
+ *       - in: query
+ *         name: limit
+ *         schema:
+ *         type: integer
+ *         description: The number of Pokemon to return.
+ *       - in: query
+ *         name: offset
+ *         schema:
+ *         type: integer
+ *         description: The number of Pokemon to skip before starting to return Pokemon.
  *     responses:
  *       200:
  *         description: A list of Pokemon was successfully fetched.
